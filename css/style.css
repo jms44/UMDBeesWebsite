@@ -220,7 +220,8 @@ th{
 }
 .dropdown button{
   background: #fcebaa;
-  border: #fcebaa;
+  border-width: 3px;
+  border-color: #e2b769;
+  margin-right: 1vw;
   color: #000000;
-
 }
