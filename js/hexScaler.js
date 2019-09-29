@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
   resizeHexagons = function () {
-      var scaleXVal = 0.0001;
-      scaleXVal = ($(window).width()/$(window).height());
+      var scaleXVal = 0.0001
+      scaleXVal = ($(window).width()/$(window).height())
       scaleXVal = scaleXVal * (1110/1950)
       document.body.style.setProperty('--scaleValue', scaleXVal)
       document.body.style.setProperty('--widthScale', $(window).width()/1950)
