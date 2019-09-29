@@ -1,6 +1,16 @@
 body{
   background: #fcebaa;
+  height: 100%;
+  --scaleValue: 1;
+  --widthScale: 1;
+  --heightScale: 1;
+  --offsetValue: 10;
 }
+html{
+  height:100%;
+}
+
+
 
 th{
   color: #fcebaa;
@@ -8,31 +18,42 @@ th{
 
 .top-rectangle{
   width: 100%;
-  height: 60px;
+  height: 6%;
+  z-index: 11
+  position: fixed;
   background: #e2b769;
   text-align: center;
-  font-size: 40px;
+  font-size: 3.5vh;
   text-color: #fcebaa;
 }
 
 .frame{
-  width: 210px;
-  height: 0px;
-  margin: 0 auto;
-  margin-top: 20px;
   position: relative;
+  background: #000fff;
+  width: 12.5%;
+  height: 0%;
   cursor: pointer;
+
+}
+.frame:hover .i1{
+  transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)));
+  -webkit-transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)));
+}
+.frame:hover .i2{
+  transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(60deg);
+  -webkit-transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(60deg);
+}
+.frame:hover .i3{
+  transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(-60deg);
+  -webkit-transform:scaleX(.8) scaleY(.8) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(-60deg);
 }
 
-.frame:hover .hex-inner{
-  height: 105px;
-  width: 180px;
-  left: 15px;
-  top: 86px !important;
-  border-radius: 5px;
-}
+
 .non-scrollables{
-
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: 100%;
 }
 .fb-image{
   position: relative;
@@ -57,60 +78,125 @@ th{
   transform: scale(.9);
   -webkit-transform: scale(.9);
 }
-
-.hex-outer{
-  z-index: -2;
-  background: #e2b769;
-  width: 210px;
-  height: 120px;
-}
 .vert-line{
-  position: absolute;
+  position: fixed;
   left: 0px;
-  width: 5px;
+  width: 0.4vw;
   height: 100%;
   background: #e2b769;
 }
+
 .hex-inner{
+
+  position: relative;
   z-index: -1;
   background: #fcebaa;
-  width: 200px;
-  height: 115px;
-  position: relative;
-  left: 5px;
-  top: 82px !important;
+  margin-top: inherit;
+  margin-left: inherit;
   border-radius: 0;
-  transition: all .4s;
-  -webkit-transition: all .4s;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  border-radius: 3px;
+
+}
+
+.hex-outer{
+  position: relative;
+  z-index: -1;
+  background: #e2b769;
+  margin-top: inherit;
+  margin-left: inherit;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+
 }
 
 .h1{
-  position: absolute;
-  top: 80px;
+  position: fixed;
+  transform-origin: center;
+  width: 242.5px;
+  height: 140px;
+  transform: scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)));
+  -webkit-transform:scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)));
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
+
 }
 
 .h2{
-  position: absolute;
-  top: 80px;
-  transform: rotate(60deg);
-  -webkit-transform: rotate(60deg);
+  visibility: visible;
+  position: fixed;
+  transform-origin: center;
+  top:inherit;
+  width: 242.5px;
+  height: 140px;
+  transform: scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(60deg);
+  -webkit-transform:scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(60deg);
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
 }
 
 .h3{
-  position: absolute;
-  top: 80px;
-  transform: rotate(-60deg);
-  -webkit-transform: rotate(-60deg);
+  visibility: visible;
+  position: fixed;
+  origin:center;
+  transform-origin: center;
+  top:inherit;
+  width: 242.5px;
+  height: 140px;
+  transform: scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(-60deg);
+  -webkit-transform:scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(-60deg);
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
+}
+
+.i1{
+  position: fixed;
+  transform-origin: center;
+  width: 242.5px;
+  height: 140px;
+  transform:scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)));
+  -webkit-transform:scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)));
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
+
+}
+
+.i2{
+  visibility: visible;
+  position: fixed;
+  transform-origin: center;
+  top:inherit;
+  width: 242.5px;
+  height: 140px;
+  transform: scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(60deg);
+  -webkit-transform: scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(60deg);
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
+}
+
+.i3{
+  visibility: visible;
+  position: fixed;
+  origin:center;
+  transform-origin: center;
+  top:inherit;
+  width: 242.5px;
+  height: 140px;
+  transform:scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale))) scaleY(calc(var(--heightScale)))  rotate(-60deg);
+  -webkit-transform:scaleX(.95) scaleY(.95) scaleX(calc(var(--widthScale)))scaleY(calc(var(--heightScale)))  rotate(-60deg);
+  top: calc(1px * var(--yOffsetValue));
+  left: calc(1px * var(--offsetValue));
 }
 
 .label{
-  position: absolute;
+  position: relative;
   color: #e2b769;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 4vh;
   text-align: center;
-  left: 100px;
-  top: 120px;
+  left: 10%;
+  top: 20%;
     transition: all .4s;
   -webkit-transition: all .4s;
 }
