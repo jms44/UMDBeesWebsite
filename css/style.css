@@ -55,8 +55,8 @@ th{
 .non-scrollables{
   position: fixed;
   top: 0%;
-  width: 100%;
-  height: 100%;
+  width: 0%;
+  height: 0%;
 }
 .fb-image{
   position: relative;
@@ -214,9 +214,13 @@ th{
   font-size: 4vh;
   text-align: left;
 }
+.scrollable h3{
+  font-size: 3.1vh;
+  text-align: left;
+}
 .scrollable p{
   margin-top: 3%;
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 .dropdown button{
   background: #fcebaa;
